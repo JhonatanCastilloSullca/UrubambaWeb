@@ -1,0 +1,74 @@
+---
+import ContenidoCard from "@components/ContenidoCard.astro";
+import Title from "@components/Title.astro";
+import IconoLaptop from "@iconos/IconoLaptop.astro";
+import IconoCheck from "@iconos/IconoCheck.astro";
+import IconoPen from "@iconos/IconoPen.astro";
+import IconoFilm from "@iconos/IconoFilm.astro";
+
+const titleSectionProps = {
+    titulo: "COMPONENTES DEL TRABAJO DE LA IOARR",
+    descripcion:
+        "OPTIMIZACIÓN DEL SISTEMA DE INFORMACIÓN DEL SERVICIO DE CATALOGACIÓN DE INMUEBLES DEL CENTRO HISTÓRICO, DISTRITO DE CUSCO, PROVINCIA CUSCO, DEPARTAMENTO CUSCO",
+};
+
+const cardData = [
+    {
+        icono: IconoLaptop,
+        titulo: "1. Product",
+        contenido:
+            "Metus potenti velit sollicitudin porttitor magnis elit lacinia tempor varius, ut cras orci vitae parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra congue risus.",
+        color: "#4c51bf",
+    },
+    {
+        icono: IconoFilm,
+        titulo: "2. Features",
+        contenido:
+            "Metus potenti velit sollicitudin porttitor magnis elit lacinia tempor varius, ut cras orci vitae parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra congue risus.",
+        color: "#38b2ac",
+    },
+    {
+        icono: IconoCheck,
+        titulo: "3. Card",
+        contenido:
+            "Metus potenti velit sollicitudin porttitor magnis elit lacinia tempor varius, ut cras orci vitae parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra congue risus.",
+        color: "#f56565",
+    },
+    {
+        icono: IconoPen,
+        titulo: "4. Design",
+        contenido:
+            "Metus potenti velit sollicitudin porttitor magnis elit lacinia tempor varius, ut cras orci vitae parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra congue risus.",
+        color: "#ed64a6",
+    },
+];
+---
+
+<section
+    class="w-full mx-auto"
+    style="background-image: url('http://catalogacion.cusco.gob.pe/assets/img/fondo-componentes.png'); background-size: cover; background-position: center;"
+>
+    <div class="max-w-7xl mx-auto my-24">
+        <Title {...titleSectionProps} />
+
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
+                {
+                    cardData.map((card) => (
+                        <div class="p-6 bg-gray-100 bg-opacity-90 rounded-lg">
+                            <div class="mb-5">
+                                <card.icono color={"#000"} size="32px" />{" "}
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">
+                                {card.titulo}
+                            </h3>
+                            <p class="text-sm leading-6 text-gray-600">
+                                {card.contenido}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>

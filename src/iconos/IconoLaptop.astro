@@ -1,0 +1,18 @@
+---
+const { color = "#000", size = "24px" } = Astro.props;
+---
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    width={size}
+    height={size}
+    stroke={color}
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+>
+    <rect width="18" height="12" x="3" y="4" rx="2" ry="2"></rect>
+    <path d="M2 20h20"></path>
+</svg>

@@ -1,0 +1,78 @@
+---
+import LeftStep from "@components/LeftStep.astro";
+import RightStep from "@components/RightStep.astro";
+import Title from "@components/Title.astro";
+
+const titleSectionProps = {
+    titulo: "Welcome to Urubamba Catalogación",
+    descripcion:
+        "One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022.",
+};
+
+const rightStepsProps = {
+    contenido: [
+        {
+            number: "1°",
+            tittle: "asd",
+            description:
+                "Pour your vision into it. Add images, text, and all thatPour your vision into it. Add images, text, and all that Pour your vision into it. Add images, text, and all thatPour your vision into it. Add images, text, and all that Pour your vision into it. Add images, text, and all thatPour your vision into it. Add images, text, and all that",
+        },
+        {
+            number: "2°",
+            tittle: "asd",
+            description:
+                "jazz to breathe life into your digital space. Remember,",
+        },
+        {
+            number: "3°",
+            tittle: "asd",
+            description: "it's the content that tells your story, so make it",
+        },
+        { number: "4°", tittle: "asd", description: "captivating." },
+    ],
+};
+
+const leftStepsProps = {
+    contenido: [
+        {
+            number: "5°",
+            tittle: "asd",
+            description:
+                "Pour your vision into it. Add images, text, and all that",
+        },
+        {
+            number: "6°",
+            tittle: "asd",
+            description:
+                "jazz to breathe life into your digital space. Remember,",
+        },
+        {
+            number: "7°",
+            tittle: "asd",
+            description: "it's the content that tells your story, so make it",
+        },
+        { number: "8°", tittle: "asd", description: "captivating." },
+    ],
+};
+---
+
+<section class="w-full max-w-7xl mx-auto pt-24">
+    <Title {...titleSectionProps} />
+    <div class="flex flex-row">
+        <div class="basis-2/4">
+            {rightStepsProps.contenido.map((step) => <RightStep {...step} />)}
+        </div>
+        <div
+            class="basis-1/3 flex justify-center align-middle items-center mx-4"
+        >
+            <img
+                class="rounded-full h-64"
+                src="http://catalogacion.cusco.gob.pe/assets/img/mapa-sectores-gestion-centro-historico.jpg"
+                alt=""
+            />
+        </div>
+        <div class="basis-2/4">
+            {leftStepsProps.contenido.map((step) => <LeftStep {...step} />)}
+        </div>
+    </div>
+</section>

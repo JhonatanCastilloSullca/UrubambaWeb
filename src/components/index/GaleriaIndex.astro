@@ -1,0 +1,26 @@
+---
+import Title from "@components/Title.astro";
+import GaleriaMasonry from "@components/GaleriaMasonry";
+
+const titleSectionProps = {
+    titulo: "Nuestra galeria",
+};
+
+const Imagenes = [
+    { imagen: "https://via.placeholder.com/1920x820?text=Imagen+1" },
+    { imagen: "https://via.placeholder.com/1920x820?text=Imagen+2" },
+    { imagen: "https://via.placeholder.com/1920x820?text=Imagen+3" },
+    { imagen: "https://via.placeholder.com/1920x820?text=Imagen+4" },
+    { imagen: "https://via.placeholder.com/1920x820?text=Imagen+5" },
+];
+---
+
+<section
+    class="w-full mx-auto"
+    style="background-image: url('http://catalogacion.cusco.gob.pe/assets/img/fondo-componentes.png'); background-size: cover; background-position: center;"
+>
+    <div class="max-w-7xl mx-auto">
+        <Title {...titleSectionProps} />
+    </div>
+    <GaleriaMasonry client:load />
+</section>

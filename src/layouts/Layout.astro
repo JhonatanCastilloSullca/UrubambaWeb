@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/tailwind.css";
 
 interface Props {
 	title: string;
@@ -21,8 +22,8 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<Header />
-		<div class="min-h-screen h-screen">
-			<slot class="min-h-screen h-screen" />
+		<div class="h-auto">
+			<slot class="h-auto" />
 		</div>
 		<Footer />
 	</body>
