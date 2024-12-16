@@ -10,6 +10,7 @@ export default {
 				UrubambaPrimaryColor: '#1e293b',
 				UrubambaSecondaryColor: '#101010',
 				UrubambaWhiteColor: '#ededed',
+				UrubambaMarronColor: '#926a4f',
 
 			},
 			fontFamily: {

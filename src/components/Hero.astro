@@ -3,28 +3,28 @@ const { titulo, descripcion, img, buttons } = Astro.props;
 ---
 
 <section
-    class="relative w-full mx-auto my-auto bg-cover bg-center h-1/2 flex"
+    class="relative w-full mx-auto my-auto bg-cover bg-center min-h-[50vh] flex"
     style={`background-image: url('${img}');`}
 >
-    <!-- Overlay -->
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-    <!-- Content -->
     <div
-        class="relative z-10 max-w-4xl mx-auto my-auto text-center text-white py-16 px-4 flex flex-col items-center"
+        class="relative z-10 max-w-4xl mx-auto my-auto text-center text-white py-8 md:py-16 px-4 flex flex-col items-center"
     >
-        <h1 class="text-5xl font-extrabold mb-4">
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-4">
             {titulo}
         </h1>
-        <h6 class="max-w-3xl text-md font-light mb-8">
+
+        <h6 class="max-w-3xl text-sm md:text-md font-light mb-8">
             {descripcion}
         </h6>
-        <div class="flex justify-center gap-4">
+
+        <div class="flex flex-col md:flex-row justify-center gap-4">
             {
                 buttons.map((button) => (
                     <a
                         href={button.link}
-                        class="py-2 px-4 text-md font-medium text-white bg-transparent border border-UrubambaPrimaryColor rounded-md hover:bg-UrubambaPrimaryColor/50 focus:ring-4 focus:ring-UrubambaPrimaryColor/30 focus:outline-none transition-all"
+                        class="py-2 px-4 text-sm md:text-md font-medium text-white bg-transparent border border-UrubambaPrimaryColor rounded-xl hover:bg-UrubambaPrimaryColor/50 focus:ring-4 focus:ring-UrubambaPrimaryColor/30 focus:outline-none transition-all"
                     >
                         {button.titulo}
                     </a>

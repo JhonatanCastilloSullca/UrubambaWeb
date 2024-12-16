@@ -1,12 +1,6 @@
 ---
-import Title from "@components/Title.astro";
-import GaleriaMasonry from "@components/GaleriaMasonry";
-
-const titleSectionProps = {
-    titulo: "Nuestra galeria",
-};
-
-const Imagenes = [
+import "photoswipe/style.css";
+const imagenes = [
     { imagen: "https://via.placeholder.com/1920x820?text=Imagen+1" },
     { imagen: "https://via.placeholder.com/1920x820?text=Imagen+2" },
     { imagen: "https://via.placeholder.com/1920x820?text=Imagen+3" },
@@ -15,12 +9,35 @@ const Imagenes = [
 ];
 ---
 
-<section
-    class="w-full mx-auto"
-    style="background-image: url('http://catalogacion.cusco.gob.pe/assets/img/fondo-componentes.png'); background-size: cover; background-position: center;"
->
-    <div class="max-w-7xl mx-auto">
-        <Title {...titleSectionProps} />
+<div class="max-w-7xl mx-auto my-24">
+    <div class="pswp-gallery grid grid-cols-3 gap-6" id="gallery">
+        {
+            imagenes.map(({ imagen }, index) => (
+                <a
+                    key={index}
+                    href={imagen}
+                    class="rounded-md shadow-xl shadow-UrubambaPrimaryColor/10 hover:shadow-2xl hover:shadow-UrubambaPrimaryColor/45 transition-all overflow-hidden hover:scale-105"
+                    target="_blank"
+                    data-cropped="true"
+                    data-pswp-width="920"
+                    data-pswp-height="580"
+                >
+                    <img
+                        src={imagen}
+                        alt={`Imagen ${index + 1}`}
+                        class="object-cover"
+                    />
+                </a>
+            ))
+        }
     </div>
-    <GaleriaMasonry client:load />
-</section>
+</div>
+<script>
+    import PhotoSwipeLightbox from "photoswipe/lightbox";
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: "#gallery",
+        children: "a",
+        pswpModule: () => import("photoswipe"),
+    });
+    lightbox.init();
+</script>

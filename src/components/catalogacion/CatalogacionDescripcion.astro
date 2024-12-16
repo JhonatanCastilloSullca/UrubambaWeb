@@ -1,0 +1,114 @@
+---
+import Title from "@components/Title.astro";
+import IconoCheck from "@iconos/IconoCheck.astro";
+import IconoSquare from "@iconos/IconoSquare.astro";
+import IconoHouse from "@iconos/IconoHouse.astro";
+
+const titleSectionProps = {
+    titulo: "Mapa de Consulta de Fichas de inmuebles urbanos",
+    descripcion:
+        "El siguiente mapa interactivo, muestra todos los inmuebles catalogados del Centro Histórico de Cusco, divididos por los 09 sectores de gestión delimitados en nuestro mapa por lineas de colores distintivos de cada sector, además el mapa muestra una clasificación de los inmuebles por las categorias de catalogación y la delimitación por área de estructuración.A continuación se describirá los sectores de gestión, categorias de catalogación y las delimitaciones por área de estructuración, para la mejor interacción con el mapa y su información.",
+};
+
+const data = [
+    {
+        seccion: "Sectores de Gestión",
+
+        items: [
+            { icono: IconoSquare, color: "#1e293b", texto: "asdh" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdg" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdds" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdf" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdw" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdb" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdv" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdx" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdg" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdf" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdw" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asds" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdx" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdw" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asds" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdx" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdw" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asds" },
+            { icono: IconoSquare, color: "#1e293b", texto: "asdx" },
+        ],
+    },
+    {
+        seccion: "Sectores de Gestión 2",
+
+        items: [
+            { icono: IconoHouse, color: "#1e293b", texto: "asddsad" },
+            { icono: IconoHouse, color: "#1e293b", texto: "asdfdsaf" },
+            { icono: IconoHouse, color: "#1e293b", texto: "asdfdsaf" },
+            { icono: IconoHouse, color: "#1e293b", texto: "asdfdsaf" },
+            { icono: IconoHouse, color: "#1e293b", texto: "asdfdsaf" },
+            { icono: IconoHouse, color: "#1e293b", texto: "asdfdsaf" },
+            { icono: IconoHouse, color: "#1e293b", texto: "asdfdsaf" },
+        ],
+    },
+    {
+        seccion: "Sectores de Gestión 3",
+
+        items: [
+            { icono: IconoSquare, color: "#1e293b", texto: "asddsagdsfad" },
+            { icono: IconoSquare, color: "#1e293b", texto: "afasdf" },
+            { icono: IconoSquare, color: "#1e293b", texto: "afasdf" },
+            { icono: IconoSquare, color: "#1e293b", texto: "afasdf" },
+            { icono: IconoSquare, color: "#1e293b", texto: "afasdf" },
+            { icono: IconoSquare, color: "#1e293b", texto: "afasdf" },
+            { icono: IconoSquare, color: "#1e293b", texto: "afasdf" },
+            { icono: IconoSquare, color: "#1e293b", texto: "afasdasfdsadf" },
+        ],
+    },
+];
+---
+
+<section class="w-full max-w-7xl mx-auto pt-16">
+    <Title {...titleSectionProps} />
+
+    <div class="grid grid-cols-12 gap-8 max-w-screen-xl mx-auto mb-4">
+        <div class="col-span-5 flex flex-col gap-2 justify-center items-center">
+            <img
+                src="https://via.placeholder.com/1920x820?text=Imagen+5"
+                alt="Municipalidad-foto"
+                class="h-80 object-cover"
+            />
+        </div>
+        <div class="col-span-7 flex flex-col gap-2">
+            <h3
+                class="text-xl text-UrubambaPrimaryColor font-semibold text-center my-2"
+            >
+                LEYENDA MAPA DE CATALOGACIÓN
+            </h3>
+            <div
+                class="columns-2 gap-2 font-mono text-white text-sm text-center font-bold leading-6 bg-stripes-purple rounded-lg"
+            >
+                {
+                    data.map((section, index) => (
+                        <div
+                            class={`flex flex-col px-4 py-2 rounded-lg  dark:text-purple-400`}
+                            key={index}
+                        >
+                            <span class="font-sans text-base text-UrubambaPrimaryColor font-semibold my-2 text-start">
+                                {section.seccion}
+                            </span>
+                            {section.items.map((item, idx) => (
+                                <div class="flex gap-x-10 my-1" key={idx}>
+                                    <div class="icono">
+                                        <item.icono color={item.color} />
+                                    </div>
+                                    <div class="font-sans text-base font-normal text-UrubambaPrimaryColor">
+                                        {item.texto}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>

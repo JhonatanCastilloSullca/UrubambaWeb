@@ -1,0 +1,20 @@
+---
+import Hero from "@components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import CatalogacionDescripcion from "@components/catalogacion/CatalogacionDescripcion.astro";
+import CatalogacionInformacionInmuebles from "@components/catalogacion/CatalogacionInformacionInmuebles.astro";
+
+const heroProps = {
+    titulo: "Catalogación de Inmuebles Urbanos",
+    img: "https://via.placeholder.com/1400x720",
+    buttons: [{ titulo: "Get Started", link: "/start" }],
+};
+---
+
+<Layout title="Catalogación Urubamba">
+    <main class="w-full mx-auto flex flex-col justify-center items-center">
+        <Hero {...heroProps} />
+        <CatalogacionDescripcion />
+        <CatalogacionInformacionInmuebles />
+    </main>
+</Layout>

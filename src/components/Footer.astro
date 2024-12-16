@@ -1,3 +1,165 @@
-<footer class="relative">
-    <span>este es el footer</span>
+---
+import IconoEnvelope from "@iconos/IconoEnvelope.astro";
+import IconoLocation from "@iconos/IconoLocation.astro";
+import IconoPhone from "@iconos/IconoPhone.astro";
+import IconoTime from "@iconos/IconoTime.astro";
+---
+
+<footer class="tracking-wide bg-UrubambaPrimaryColor pt-12 pb-4 px-6 sm:px-10">
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-screen-xl mx-auto mb-6"
+    >
+        <div class="flex justify-center">
+            <img
+                src="https://via.placeholder.com/1920x820?text=Imagen+5"
+                alt="Municipalidad-foto"
+                class="w-full max-w-[200px] sm:max-w-[300px] lg:max-w-full"
+            />
+        </div>
+        <div class="flex justify-center">
+            <img
+                src="https://via.placeholder.com/1920x820?text=Imagen+5"
+                alt="Municipalidad-foto-logo"
+                class="w-full max-w-[200px] sm:max-w-[300px] lg:max-w-full"
+            />
+        </div>
+        <div class="flex justify-center">
+            <img
+                src="https://via.placeholder.com/1920x820?text=Imagen+5"
+                alt="Municipalidad-foto-imagen"
+                class="w-full max-w-[200px] sm:max-w-[300px] lg:max-w-full"
+            />
+        </div>
+    </div>
+
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-screen-xl mx-auto"
+    >
+        <div>
+            <h4
+                class="relative text-UrubambaWhiteColor font-bold text-lg sm:text-xl mb-4 sm:mb-6 group"
+            >
+                Quick Links
+                <span
+                    class="absolute left-0 bottom-[-4px] bg-yellow-400 transition-all duration-400 ease-in-out h-1 rounded-sm w-6 sm:w-8 group-hover:w-12 sm:group-hover:w-16 mt-2"
+                ></span>
+            </h4>
+            <p class="text-sm text-white font-thin">
+                La Municipalidad Provincial de Urubamba tiene como finalidad
+                hacer de su provincia un espacio de gestión moderna, amigable al
+                turismo con una alta calidad de vida.
+            </p>
+        </div>
+        <div>
+            <h4
+                class="relative text-UrubambaWhiteColor font-bold text-lg sm:text-xl mb-4 sm:mb-6 group"
+            >
+                Dirección
+                <span
+                    class="absolute left-0 bottom-[-4px] bg-yellow-400 transition-all duration-400 ease-in-out h-1 rounded-sm w-6 sm:w-8 group-hover:w-12 sm:group-hover:w-16 mt-2"
+                ></span>
+            </h4>
+            <ul class="space-y-4">
+                <li class="flex gap-2">
+                    <div class="icono">
+                        <IconoLocation />
+                    </div>
+                    <span class="text-sm text-white font-thin">
+                        Calle 2 de mayo, Urubamba
+                    </span>
+                </li>
+                <li class="flex gap-2">
+                    <div class="icono">
+                        <IconoEnvelope />
+                    </div>
+                    <span class="text-sm text-white font-thin">
+                        contacto@urubamba.com
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h4
+                class="relative text-UrubambaWhiteColor font-bold text-lg sm:text-xl mb-4 sm:mb-6 group"
+            >
+                Horario de Atención
+                <span
+                    class="absolute left-0 bottom-[-4px] bg-yellow-400 transition-all duration-400 ease-in-out h-1 rounded-sm w-6 sm:w-8 group-hover:w-12 sm:group-hover:w-16 mt-2"
+                ></span>
+            </h4>
+            <ul class="space-y-4">
+                <li class="flex gap-2">
+                    <div class="icono">
+                        <IconoTime />
+                    </div>
+                    <div>
+                        <span class="text-sm text-white font-normal">
+                            Lunes a Viernes
+                        </span>
+                        <span class="block text-sm text-white font-thin">
+                            8:00 am - 1:00 pm, 2:00 pm - 4:30 pm
+                        </span>
+                    </div>
+                </li>
+                <li class="flex gap-2">
+                    <div class="icono">
+                        <IconoPhone />
+                    </div>
+                    <span class="text-sm text-white font-thin">
+                        +51 123 456 789
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h4
+                class="relative text-UrubambaWhiteColor font-bold text-lg sm:text-xl mb-4 sm:mb-6 group"
+            >
+                Links Importantes
+                <span
+                    class="absolute left-0 bottom-[-4px] bg-yellow-400 transition-all duration-400 ease-in-out h-1 rounded-sm w-6 sm:w-8 group-hover:w-12 sm:group-hover:w-16 mt-2"
+                ></span>
+            </h4>
+            <ul class="space-y-4">
+                <li>
+                    <a
+                        href="#"
+                        class="text-UrubambaWhiteColor hover:text-[#FFA726] text-sm"
+                    >
+                        Catalogación
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        class="text-UrubambaWhiteColor hover:text-[#FFA726] text-sm"
+                    >
+                        Patrimonio Inmaterial
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        class="text-UrubambaWhiteColor hover:text-[#FFA726] text-sm"
+                    >
+                        Plan Maestro
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        class="text-UrubambaWhiteColor hover:text-[#FFA726] text-sm"
+                    >
+                        Requisitos Licencias
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="border-t text-center border-UrubambaWhiteColor pt-4 mt-8">
+        <p class="text-UrubambaWhiteColor text-sm">
+            © Municipalidad Provincial de Urubamba - 2024
+        </p>
+    </div>
 </footer>

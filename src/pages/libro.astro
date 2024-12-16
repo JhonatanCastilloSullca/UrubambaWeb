@@ -1,0 +1,23 @@
+---
+import Hero from "@components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import CatalogacionDescripcion from "@components/catalogacion/CatalogacionDescripcion.astro";
+import CatalogacionAmbientesUrbanosDescripcion from "@components/catalogacion/CatalogacionAmbientesUrbanosDescripcion.astro";
+import Title from "@components/Title.astro";
+
+const heroProps = {
+    titulo: "El centro del Cusco",
+    img: "https://via.placeholder.com/1400x720",
+    buttons: [{ titulo: "Get Started", link: "/start" }],
+};
+---
+
+<Layout title="Catalogación Urubamba">
+    <main class="w-full mx-auto flex flex-col justify-center items-center">
+        <Hero {...heroProps} />
+        <Title
+            titulo="“EL CENTRO DEL CUSCO”, Morada de historia y cultura viva."
+            descripcion="A continuación, se muestra el Texto cuya intención es transportar a los lectores de la mano por la ciudad, contando y mostrando su patrimonio cultural material e inmaterial más significativos, aquellos que se delinearon a lo largo de los años, que cuentan historias del pasado y del presente, que hacen así mismo, vivir el presente y reconociendo el pasado. Texto que busca introducir a quienes lo lean, en un espacio geográfico cultural, que siempre vibró y vivió intensamente cada etapa de su historia, y que fue marcada por su gente en las plazas, calles y edificios en la memoria colectiva."
+        />
+    </main>
+</Layout>
