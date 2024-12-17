@@ -1,11 +1,10 @@
 ---
-const { icono, titulo, contenido, color } = Astro.props;
+const { icono, titulo, contenido } = Astro.props;
 ---
 
 <div class="p-6 bg-gray-100 bg-opacity-90 rounded-lg">
     <div class="mb-5">
         {icono}
-        <!-- Aquí se renderiza el componente que pasaste como propiedad -->
     </div>
     <h3 class="text-lg font-bold mb-2">{titulo}</h3>
     <p class="text-sm leading-6 text-gray-600">{contenido}</p>

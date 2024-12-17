@@ -1,5 +1,17 @@
 ---
-const { titulo, descripcion, img, buttons } = Astro.props;
+interface Button {
+    titulo: string;
+    link: string;
+}
+
+interface Props {
+    titulo?: string;
+    descripcion?: string;
+    img?: string;
+    buttons: Button[];
+}
+
+const { titulo, descripcion, img, buttons }: Props = Astro.props;
 ---
 
 <section
