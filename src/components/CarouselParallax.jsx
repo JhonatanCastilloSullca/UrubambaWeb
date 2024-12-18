@@ -2,6 +2,8 @@ import LeftArrow from "@iconos/leftArrow";
 import RightArrow from "@iconos/RightArrow";
 import React, { useEffect } from "react";
 
+
+
 function CarouselParallax() {
     const data = [
         {
@@ -46,10 +48,12 @@ function CarouselParallax() {
     }, [isTransitioning]);
 
     return (
+
         <section
             className="w-full mx-auto mt-24 py-16 bg-cover bg-center relative"
             style={{ backgroundImage: `url(${data[currentIndex].imagen})` }}
         >
+
             <div className="absolute inset-0 bg-black/70"></div>
 
             <div className="w-full max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row">

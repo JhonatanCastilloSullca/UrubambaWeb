@@ -10,7 +10,6 @@ const { titulo, descripcion } = Astro.props;
     </h2>
     <p
         class="mt-4 font-medium text-sm text-center text-UrubambaSecondaryColor/50"
-    >
-        {descripcion}
-    </p>
+        set:html={descripcion}
+    />
 </div>

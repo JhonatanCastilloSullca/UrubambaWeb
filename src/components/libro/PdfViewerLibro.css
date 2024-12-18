@@ -1,0 +1,10 @@
+/* Ocultar la barra de herramientas */
+.rpv-default-layout__toolbar {
+    display: none !important;
+}
+
+/* Asegúrate de que el visor no tenga márgenes ni padding extra */
+.rpv-default-layout__body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
