@@ -20,42 +20,37 @@ const { videoId, title, backgroundImage } = Astro.props;
     </a>
 </lite-youtube>
 <script>
-    /**
-     * A lightweight youtube embed. Still should feel the same to the user, just MUCH faster to initialize and paint.
-     *
-     * Thx to these as the inspiration
-     *   https://storage.googleapis.com/amp-vs-non-amp/youtube-lazy.html
-     *   https://autoplay-youtube-player.glitch.me/
-     *
-     * Once built it, I also found these:
-     *   https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube (👍👍)
-     *   https://github.com/Daugilas/lazyYT
-     *   https://github.com/vb/lazyframe
-     */
+    declare global {
+        interface Window {
+            YT: any;
+        }
+    }
+
     class LiteYTEmbed extends HTMLElement {
+        videoId: string | null = null;
+        playLabel: string | null = null;
+        needsYTApi: boolean = false;
+        static preconnected: boolean = false;
+        ytApiPromise: Promise<void> | undefined;
+        playerPromise?: Promise<any>;
+
         connectedCallback() {
             this.videoId = this.getAttribute("videoid");
+            let playBtnEl = this.querySelector(
+                ".lty-playbtn",
+            ) as HTMLButtonElement;
 
-            let playBtnEl = this.querySelector(".lty-playbtn");
-            // A label for the button takes priority over a [playlabel] attribute on the custom-element
             this.playLabel =
-                (playBtnEl && playBtnEl.textContent.trim()) ||
+                playBtnEl?.textContent?.trim() ||
                 this.getAttribute("playlabel") ||
                 "Play";
 
             this.dataset.title = this.getAttribute("title") || "";
-
-            /**
-             * Lo, the youtube poster image!  (aka the thumbnail, image placeholder, etc)
-             *
-             * See https://github.com/paulirish/lite-youtube-embed/blob/master/youtube-thumbnail-urls.md
-             */
             if (!this.style.backgroundImage) {
                 this.style.backgroundImage = `url("https://i.ytimg.com/vi/${this.videoId}/hqdefault.jpg")`;
                 this.upgradePosterImage();
             }
 
-            // Set up play button, and its visually hidden label
             if (!playBtnEl) {
                 playBtnEl = document.createElement("button");
                 playBtnEl.type = "button";
@@ -71,12 +66,11 @@ const { videoId, title, backgroundImage } = Astro.props;
 
             this.addNoscriptIframe();
 
-            // for the PE pattern, change anchor's semantics to button
             if (playBtnEl.nodeName === "A") {
                 playBtnEl.removeAttribute("href");
                 playBtnEl.setAttribute("tabindex", "0");
                 playBtnEl.setAttribute("role", "button");
-                // fake button needs keyboard help
+
                 playBtnEl.addEventListener("keydown", (e) => {
                     if (e.key === "Enter" || e.key === " ") {
                         e.preventDefault();
@@ -85,7 +79,6 @@ const { videoId, title, backgroundImage } = Astro.props;
                 });
             }
 
-            // On hover (or tap), warm up the TCP connections we're (likely) about to use.
             this.addEventListener("pointerover", LiteYTEmbed.warmConnections, {
                 once: true,
             });
@@ -93,25 +86,19 @@ const { videoId, title, backgroundImage } = Astro.props;
                 once: true,
             });
 
-            // Once the user clicks, add the real iframe and drop our play button
-            // TODO: In the future we could be like amp-youtube and silently swap in the iframe during idle time
-            //   We'd want to only do this for in-viewport or near-viewport ones: https://github.com/ampproject/amphtml/pull/5003
             this.addEventListener("click", this.activate);
 
-            // Chrome & Edge desktop have no problem with the basic YouTube Embed with ?autoplay=1
-            // However Safari desktop and most/all mobile browsers do not successfully track the user gesture of clicking through the creation/loading of the iframe,
-            // so they don't autoplay automatically. Instead we must load an additional 2 sequential JS files (1KB + 165KB) (un-br) for the YT Player API
-            // TODO: Try loading the the YT API in parallel with our iframe and then attaching/playing it. #82
             this.needsYTApi =
                 this.hasAttribute("js-api") ||
                 navigator.vendor.includes("Apple") ||
                 navigator.userAgent.includes("Mobi");
         }
 
-        /**
-         * Add a <link rel={preload | preconnect} ...> to the head
-         */
-        static addPrefetch(kind, url, as) {
+        static addPrefetch(
+            kind: string,
+            url: string,
+            as?: "script" | "style" | "font" | "image" | "document",
+        ) {
             const linkEl = document.createElement("link");
             linkEl.rel = kind;
             linkEl.href = url;
@@ -150,7 +137,7 @@ const { videoId, title, backgroundImage } = Astro.props;
                 el.src = "https://www.youtube.com/iframe_api";
                 el.async = true;
                 el.onload = (_) => {
-                    YT.ready(res);
+                    window.YT.ready(res);
                 };
                 el.onerror = rej;
                 this.append(el);
@@ -175,7 +162,7 @@ const { videoId, title, backgroundImage } = Astro.props;
             const paramsObj = Object.fromEntries(this.getParams().entries());
 
             this.playerPromise = new Promise((resolve) => {
-                let player = new YT.Player(videoPlaceholderEl, {
+                let player = new window.YT.Player(videoPlaceholderEl, {
                     width: "100%",
                     videoId: this.videoId,
                     playerVars: paramsObj,
@@ -210,20 +197,20 @@ const { videoId, title, backgroundImage } = Astro.props;
             this.classList.add("lyt-activated");
 
             if (this.needsYTApi) {
-                return this.addYTPlayerIframe(this.getParams());
+                return this.addYTPlayerIframe();
+                // return this.addYTPlayerIframe(this.getParams());
             }
 
             const iframeEl = this.createBasicIframe();
             this.append(iframeEl);
 
-            // Set focus for a11y
             iframeEl.focus();
         }
 
         createBasicIframe() {
             const iframeEl = document.createElement("iframe");
-            iframeEl.width = 560;
-            iframeEl.height = 315;
+            iframeEl.width = "560";
+            iframeEl.height = "315";
             iframeEl.title = this.playLabel;
             iframeEl.allow =
                 "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
@@ -238,12 +225,14 @@ const { videoId, title, backgroundImage } = Astro.props;
                 const webpUrl = `https://i.ytimg.com/vi_webp/${this.videoId}/sddefault.webp`;
                 const img = new Image();
                 img.fetchPriority = "low";
-                img.referrerpolicy = "origin";
+                img.referrerPolicy = "origin";
                 img.src = webpUrl;
+
                 img.onload = (e) => {
+                    const image = e.target as HTMLImageElement;
                     const noAvailablePoster =
-                        e.target.naturalHeight == 90 &&
-                        e.target.naturalWidth == 120;
+                        image.naturalHeight === 90 &&
+                        image.naturalWidth === 120;
                     if (noAvailablePoster) return;
 
                     this.style.backgroundImage = `url("${webpUrl}")`;
