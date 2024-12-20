@@ -90,7 +90,7 @@ const { videoId, title, backgroundImage } = Astro.props;
 
             this.needsYTApi =
                 this.hasAttribute("js-api") ||
-                navigator.vendor.includes("Apple") ||
+                navigator.userAgent.includes("Apple") ||
                 navigator.userAgent.includes("Mobi");
         }
 
@@ -137,7 +137,7 @@ const { videoId, title, backgroundImage } = Astro.props;
                 el.src = "https://www.youtube.com/iframe_api";
                 el.async = true;
                 el.onload = (_) => {
-                    window.YT.ready(res);
+                    window.YT.ready(res); // Usar window.YT
                 };
                 el.onerror = rej;
                 this.append(el);
@@ -167,7 +167,7 @@ const { videoId, title, backgroundImage } = Astro.props;
                     videoId: this.videoId,
                     playerVars: paramsObj,
                     events: {
-                        onReady: (event) => {
+                        onReady: (event: any) => {
                             event.target.playVideo();
                             resolve(player);
                         },
@@ -183,7 +183,7 @@ const { videoId, title, backgroundImage } = Astro.props;
             this.append(noscriptEl);
         }
 
-        getParams() {
+        getParams(): URLSearchParams {
             const params = new URLSearchParams(
                 this.getAttribute("params") || [],
             );

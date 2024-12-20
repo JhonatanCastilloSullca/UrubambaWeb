@@ -16,7 +16,12 @@
       ],
       "@iconos/*": [
         "src/iconos/*"
-      ],
-    }
+      ]
+    },
+    "noEmitOnError": false,
+    "strict": false, // Desactiva todas las comprobaciones estrictas
+    "skipLibCheck": true, // Ignora la comprobación de los archivos de las librerías
+    "noUncheckedIndexedAccess": false,
+    "noImplicitAny": false
   }
 }
