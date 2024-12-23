@@ -8,14 +8,14 @@ import {
 } from "astro-navbar";
 ---
 
-<header class="lg:flex p-5 gap-5 max-w-7xl mx-auto">
+<header class="lg:flex px-6 py-2 gap-5 max-w-7xl mx-auto">
     <Astronav>
         <div class="flex w-full justify-between items-center">
             <a href="/" class="text-lg">
                 <img
-                    src="https://via.placeholder.com/720x192"
+                    src="/logourubamba.webp"
                     alt="Logo-Urubamba"
-                    class="w-44 h-10"
+                    class="w-full h-12 object-contain"
                 />
             </a>
             <div class="block lg:hidden">
@@ -24,7 +24,7 @@ import {
         </div>
 
         <MenuItems class="hidden lg:flex lg:gap-5 mt-2 lg:mt-0">
-            <ul class="flex flex-col lg:flex-row lg:gap-3">
+            <ul class="flex flex-col items-center lg:flex-row lg:gap-3">
                 <li class="relative">
                     <a
                         href="/"

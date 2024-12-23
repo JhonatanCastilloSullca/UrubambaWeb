@@ -7,16 +7,28 @@ import React, { useEffect } from "react";
 function CarouselParallax() {
     const data = [
         {
-            codigo: "SG-07",
+            codigo: "SG-01",
             title: "Totora Paccha, Mesa Redonda y Teteqaqa",
             description: `En el tiempo de los incas, la admiración y el respeto que se sintió hacia el paisaje natural se vio reflejado en las obras que realizaron, poniendo a la piedra como parte de su tótem organizador del mundo. Compuesto por las antiguas canchas incaicas y, sobre ellas, los monumentos que son testimonio del sincretismo que nos envuelve, este lugar presenta un respetable pasado de varios siglos.`,
-            imagen: 'https://via.placeholder.com/1920x820',
+            imagen: 'municipalidad-urubamba-peru.webp',
         },
         {
-            codigo: "SG-08",
+            codigo: "SG-02",
             title: "Puka Pukara y Tambomachay",
             description: `Puka Pukara, la fortaleza roja, es una construcción militar que sirvió de puesto de control para los incas. Su cercanía con Tambomachay, lugar ceremonial de agua, refleja la importancia de la defensa y el culto en esta región.`,
-            imagen: 'https://via.placeholder.com/1500x780',
+            imagen: 'Urubamba-construccion.webp',
+        },
+        {
+            codigo: "SG-03",
+            title: "Totora Paccha, Mesa Redonda y Teteqaqa",
+            description: `En el tiempo de los incas, la admiración y el respeto que se sintió hacia el paisaje natural se vio reflejado en las obras que realizaron, poniendo a la piedra como parte de su tótem organizador del mundo. Compuesto por las antiguas canchas incaicas y, sobre ellas, los monumentos que son testimonio del sincretismo que nos envuelve, este lugar presenta un respetable pasado de varios siglos.`,
+            imagen: 'Urubamba-plaza2.webp',
+        },
+        {
+            codigo: "SG-04",
+            title: "Puka Pukara y Tambomachay",
+            description: `Puka Pukara, la fortaleza roja, es una construcción militar que sirvió de puesto de control para los incas. Su cercanía con Tambomachay, lugar ceremonial de agua, refleja la importancia de la defensa y el culto en esta región.`,
+            imagen: 'vigen-de-la-o-en-yucay-560x315.webp',
         },
     ];
 
@@ -59,8 +71,6 @@ function CarouselParallax() {
             <div className="w-full max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row">
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 px-6 lg:px-24">
-
-                    {/* Texto del carrusel */}
                     <div className="col-span-12 lg:col-span-6 flex flex-col gap-4 px-4 lg:px-12">
                         <h2
                             className={`text-2xl lg:text-3xl text-white font-semibold transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'} relative before:content-[''] before:absolute before:left-0 before:bottom-[-10px] before:h-[3px] before:w-[25%] before:bg-[#fdc657]`}
@@ -76,8 +86,6 @@ function CarouselParallax() {
                             {data[currentIndex].description}
                         </p>
                     </div>
-
-                    {/* Imagen del carrusel */}
                     <div className="col-span-12 lg:col-span-6 flex flex-col justify-center">
                         <div className="w-full h-48 lg:h-72 overflow-hidden rounded-md">
                             <img

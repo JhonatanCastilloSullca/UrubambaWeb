@@ -127,3 +127,6 @@
   font-style: italic;
   src: url('/fonts/Raleway/Raleway-ThinItalic.ttf') format('truetype');
 }
+.pswp__img{
+  object-fit: contain;
+}

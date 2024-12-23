@@ -15,7 +15,7 @@ const { titulo, descripcion, img, buttons }: Props = Astro.props;
 ---
 
 <section
-    class="relative w-full mx-auto my-auto bg-cover bg-center min-h-[50vh] flex"
+    class="relative w-full mx-auto my-auto bg-cover bg-bottom min-h-[60vh] flex"
     style={`background-image: url('${img}');`}
 >
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -27,9 +27,10 @@ const { titulo, descripcion, img, buttons }: Props = Astro.props;
             {titulo}
         </h1>
 
-        <h6 class="max-w-3xl text-sm md:text-md font-light mb-8">
-            {descripcion}
-        </h6>
+        <p
+            class="max-w-3xl text-sm md:text-md font-light mb-8 text-white"
+            set:html={descripcion}
+        />
 
         <div class="flex flex-col md:flex-row justify-center gap-4">
             {

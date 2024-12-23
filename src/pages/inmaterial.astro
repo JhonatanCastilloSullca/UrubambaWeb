@@ -7,7 +7,7 @@ import IconoSquare from "@iconos/IconoSquare.astro";
 
 const heroProps = {
     titulo: "Patrimonio Inmaterial del Centro Histórico del Cusco",
-    img: "https://via.placeholder.com/1400x720",
+    img: "urubamba-1.webp",
     buttons: [],
 };
 const data = [
@@ -15,29 +15,51 @@ const data = [
         seccion: "Sectores de Gestión",
 
         items: [
-            { icono: IconoSquare, color: "#1e293b", texto: "asdh" },
-            { icono: IconoSquare, color: "#1e293b", texto: "asdg" },
-            { icono: IconoSquare, color: "#1e293b", texto: "asdds" },
-            { icono: IconoSquare, color: "#1e293b", texto: "asdf" },
-            { icono: IconoSquare, color: "#1e293b", texto: "asdw" },
-            { icono: IconoSquare, color: "#1e293b", texto: "asdb" },
-            { icono: IconoSquare, color: "#1e293b", texto: "asdv" },
-            { icono: IconoSquare, color: "#1e293b", texto: "asdx" },
-            { icono: IconoSquare, color: "#1e293b", texto: "asdg" },
-        ],
-    },
-    {
-        seccion: "Sectores de Gestión 3",
-
-        items: [
-            { icono: IconoSquare, color: "#1e293b", texto: "asddsagdsfad" },
-            { icono: IconoSquare, color: "#1e293b", texto: "afasdf" },
-            { icono: IconoSquare, color: "#1e293b", texto: "afasdf" },
-            { icono: IconoSquare, color: "#1e293b", texto: "afasdf" },
-            { icono: IconoSquare, color: "#1e293b", texto: "afasdf" },
-            { icono: IconoSquare, color: "#1e293b", texto: "afasdf" },
-            { icono: IconoSquare, color: "#1e293b", texto: "afasdf" },
-            { icono: IconoSquare, color: "#1e293b", texto: "afasdasfdsadf" },
+            {
+                icono: IconoSquare,
+                color: "#FF5733",
+                texto: "SG-01 - Núcleo de Centro Histórico",
+            },
+            {
+                icono: IconoSquare,
+                color: "#33FF57",
+                texto: "SG-02 - San Cristóbal",
+            },
+            {
+                icono: IconoSquare,
+                color: "#3357FF",
+                texto: "SG-03 - Santo Domingo y San Agustín",
+            },
+            {
+                icono: IconoSquare,
+                color: "#F1C40F",
+                texto: "SG-04 - San Blas y Rimacpampa",
+            },
+            {
+                icono: IconoSquare,
+                color: "#8E44AD",
+                texto: "SG-05 - Santa Ana",
+            },
+            {
+                icono: IconoSquare,
+                color: "#E67E22",
+                texto: "SG-06 - San Pedro",
+            },
+            {
+                icono: IconoSquare,
+                color: "#1ABC9C",
+                texto: "SG-07 - Pumacchupan, Av. Pardo y Tres Cruces",
+            },
+            {
+                icono: IconoSquare,
+                color: "#F39C12",
+                texto: "SG-08 - Almudena, Belén y Santiago",
+            },
+            {
+                icono: IconoSquare,
+                color: "#2C3E50",
+                texto: "SG-09 - Totorapaccha, Mesa Redonda y Teteqaqa",
+            },
         ],
     },
 ];
@@ -46,17 +68,15 @@ const cardData = [
     {
         titulo: "1",
         contenido:
-            "Metus potenti velit sollicitudin porttitor magnis elit lacinia tempor varius, ut cras orci vitae parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra congue risus.",
+            "Debemos de ubicarnos en uno de los puntos de catalogación dentro de los 09 sectores de gestión inmueble que se desea consultar, para ello usted podrá incrementar el zoom de navegación del mapa, así como también deslizarlo a la izquierda y derecha.",
     },
     {
         titulo: "2",
-        contenido:
-            "Metus potenti velit sollicitudin porttitor magnis elit lacinia tempor varius, ut cras orci vitae parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra congue risus.",
+        contenido: `Una vez que tenemos ubicado el punto que deseamos consultar, hacemos click sobre , el mismo que nos llevará a una ventana que habilitará el botón de "VER MÁS", hacemos click en el para visualizar la información.`,
     },
     {
         titulo: "3",
-        contenido:
-            "Metus potenti velit sollicitudin porttitor magnis elit lacinia tempor varius, ut cras orci vitae parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra congue risus.",
+        contenido: `Una vez en la información del patrimonio inmaterial catalogado, podremos observar la información recabada a partir de entrevistas generadas en la catalogación, realizada en los 09 sectores del centro histórico del Cusco.`,
     },
 ];
 ---
@@ -80,8 +100,8 @@ const cardData = [
         />
         <div class="w-full mx-auto py-10 max-w-4xl">
             <LiteYoutube
-                videoId="uzNgtK0X_78"
-                backgroundImage="https://via.placeholder.com/1400x720"
+                videoId="c7m_h_dNm3k"
+                backgroundImage="https://img.youtube.com/vi/c7m_h_dNm3k/maxresdefault.jpg"
             />
         </div>
         <Title
@@ -128,7 +148,7 @@ const cardData = [
                                 <span class="desc-number mb-4 border-4 border-solid border-[#222222] rounded-full text-[#222222] block font-bold text-2xl text-center leading-[45px] h-[50px] w-[50px]">
                                     {card.titulo}°
                                 </span>
-                                <p class="text-base leading-6 text-gray-600">
+                                <p class="text-sm leading-6 text-gray-600">
                                     {card.contenido}
                                 </p>
                             </div>

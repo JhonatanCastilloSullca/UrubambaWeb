@@ -9,18 +9,15 @@ const titleSectionProps = {
 const cardData = [
     {
         titulo: "1",
-        contenido:
-            "Metus potenti velit sollicitudin porttitor magnis elit lacinia tempor varius, ut cras orci vitae parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra congue risus.",
+        contenido: `Debemos de ubicarnos en el inmueble que se desea consultar, para esto primero ubicamos el barrio o sector gestión y luego el inmueble, para ello usted podrá incrementar el zoom de navegación del mapa, asi como tambien deslizarlo a la izquierda y derecha.`,
     },
     {
         titulo: "2",
-        contenido:
-            "Metus potenti velit sollicitudin porttitor magnis elit lacinia tempor varius, ut cras orci vitae parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra congue risus.",
+        contenido: `Una vez que tenemos ubicado el inmueble que deseamos consultar, hacemos click sobre la forma del terreno del predio, el mismo que nos llevará a una ventana que habilitará el botón de "VER MÁS", hacemos click en el para visualizar la información del inmueble.`,
     },
     {
         titulo: "3",
-        contenido:
-            "Metus potenti velit sollicitudin porttitor magnis elit lacinia tempor varius, ut cras orci vitae parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra congue risus.",
+        contenido: `Una vez en la información del inmueble a consultar, podremos observación información arquitectónica, arqueológica e histórica del predio selccionado; esta información correponde a la catalogación realizada en los del centro histórico del Cusco.`,
     },
 ];
 ---
@@ -36,9 +33,10 @@ const cardData = [
                         <span class="desc-number mb-4 border-4 border-solid border-[#222222] rounded-full text-[#222222] block font-bold text-2xl text-center leading-[45px] h-[50px] w-[50px]">
                             {card.titulo}°
                         </span>
-                        <p class="text-base leading-6 text-gray-600">
-                            {card.contenido}
-                        </p>
+                        <p
+                            class="text-base leading-6 text-gray-600"
+                            set:html={card.contenido}
+                        />
                     </div>
                 </div>
             ))
