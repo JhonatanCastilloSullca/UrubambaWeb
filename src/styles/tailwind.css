@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+#map {
+  top: 0;
+  bottom: 0;
+  width: 1300px !important;
+  height: 450px;
+}
+
 @font-face {
   font-family: 'Raleway';
   font-weight: 900;
