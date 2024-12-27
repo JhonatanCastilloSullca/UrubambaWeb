@@ -15,7 +15,7 @@ const direcionServicioWMS = 'http://192.168.3.10:81/servicio/wms',
     formatoGeoJson = 'geojson',
     versionWMS = '1.3.0';
 const sectores = new TileLayer({ source: new TileWMS({ url: direcionServicioWMS, params: { 'LAYERS': 'sectores', 'TILED': true, 'FORMAT': formatoPNG, VERSION: versionWMS }, serverType: 'mapserver', transition: 0 }), title: 'Sectores', visible: true });
-const lotes = new TileLayer({ source: new TileWMS({ url: direcionServicioWMS, params: { 'LAYERS': 'lotes', 'TILED': true, 'FORMAT': formatoPNG, VERSION: versionWMS }, serverType: 'mapserver', transition: 0 }), title: 'Lotes', visible: false });
+const lotes = new TileLayer({ source: new TileWMS({ url: direcionServicioWMS, params: { 'LAYERS': 'lotes', 'TILED': true, 'FORMAT': formatoPNG, VERSION: versionWMS }, serverType: 'mapserver', transition: 0 }), title: 'Lotes', visible: true });
 
 const MapComponent = () => {
     useEffect(() => {
