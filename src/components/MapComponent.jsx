@@ -7,8 +7,8 @@ import TileLayer from "ol/layer/Tile";
 import OSM from "ol/source/OSM";
 import TileWMS from 'ol/source/TileWMS';
 
-const direcionServicioWMS= 'http://127.0.0.3/servicio/wms',
-direcionServicioMapCache= 'http://127.0.0.3/cgi-bin/mapcache/?',formatoPNG= 'image/png',
+const direcionServicioWMS= 'http://192.168.3.10:81/servicio/wms',
+direcionServicioMapCache= 'http://192.168.3.10:81/cgi-bin/mapcache/?',formatoPNG= 'image/png',
 formatoJPEG= 'image/jpeg',
 formatoJson= 'application/json',
 formatoText= 'text/html',
@@ -30,7 +30,7 @@ const MapComponent = () => {
             ],
             view: new View({
                 center: [-8027972.053265133, -1494712.6860792257],
-                zoom: 14,
+                zoom: 16,
             }),
         });
 
