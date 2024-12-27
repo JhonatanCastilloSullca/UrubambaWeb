@@ -10,25 +10,25 @@ function CarouselParallax() {
             codigo: "SG-01",
             title: "Totora Paccha, Mesa Redonda y Teteqaqa",
             description: `En el tiempo de los incas, la admiración y el respeto que se sintió hacia el paisaje natural se vio reflejado en las obras que realizaron, poniendo a la piedra como parte de su tótem organizador del mundo. Compuesto por las antiguas canchas incaicas y, sobre ellas, los monumentos que son testimonio del sincretismo que nos envuelve, este lugar presenta un respetable pasado de varios siglos.`,
-            imagen: 'municipalidad-urubamba-peru.webp',
+            imagen: '/municipalidad-urubamba-peru.webp',
         },
         {
             codigo: "SG-02",
             title: "Puka Pukara y Tambomachay",
             description: `Puka Pukara, la fortaleza roja, es una construcción militar que sirvió de puesto de control para los incas. Su cercanía con Tambomachay, lugar ceremonial de agua, refleja la importancia de la defensa y el culto en esta región.`,
-            imagen: 'Urubamba-construccion.webp',
+            imagen: '/Urubamba-construccion.webp',
         },
         {
             codigo: "SG-03",
             title: "Totora Paccha, Mesa Redonda y Teteqaqa",
             description: `En el tiempo de los incas, la admiración y el respeto que se sintió hacia el paisaje natural se vio reflejado en las obras que realizaron, poniendo a la piedra como parte de su tótem organizador del mundo. Compuesto por las antiguas canchas incaicas y, sobre ellas, los monumentos que son testimonio del sincretismo que nos envuelve, este lugar presenta un respetable pasado de varios siglos.`,
-            imagen: 'Urubamba-plaza2.webp',
+            imagen: '/Urubamba-plaza2.webp',
         },
         {
             codigo: "SG-04",
             title: "Puka Pukara y Tambomachay",
             description: `Puka Pukara, la fortaleza roja, es una construcción militar que sirvió de puesto de control para los incas. Su cercanía con Tambomachay, lugar ceremonial de agua, refleja la importancia de la defensa y el culto en esta región.`,
-            imagen: 'vigen-de-la-o-en-yucay-560x315.webp',
+            imagen: '/vigen-de-la-o-en-yucay-560x315.webp',
         },
     ];
 

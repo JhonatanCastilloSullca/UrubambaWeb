@@ -1,85 +1,15 @@
 ---
-import LeftStep from "@components/LeftStep.astro";
-import RightStep from "@components/RightStep.astro";
 import Title from "@components/Title.astro";
 
 const titleSectionProps = {
     titulo: "Mapa de Consulta de Fichas de inmuebles urbanos",
     descripcion: `El siguiente mapa interactivo, muestra todos los inmuebles catalogados del Centro Histórico de Cusco, divididos por los 09 sectores de gestión delimitados en nuestro mapa por lineas de colores distintivos de cada sector, además el mapa muestra una clasificación de los inmuebles por las categorias de catalogación y la delimitación por área de estructuración. <br>A continuación se describirá los sectores de gestión, categorias de catalogación y las delimitaciones por área de estructuración, para la mejor interacción con el mapa y su información.`,
 };
-
-const rightStepsProps = {
-    contenido: [
-        {
-            number: "1°",
-            tittle: "Denominación: SG-01",
-            description:
-                "Conserva la traza urbana inca, alberga evidencia arqueológica prehispánica y de transición junto a inmuebles tipo casa patio declarados patrimonio monumental (PM-I) e inmuebles con valor patrimonial individual (PI-II).",
-        },
-        {
-            number: "2°",
-            tittle: "Denominación: SG-02",
-            description:
-                "Muestra significativa presencia de evidencias arqueológicas en su disposición original, y reutilizadas e inmuebles tipo huerto declarados patrimonio monumental (PM-I) e inmuebles con valor patrimonial individual (PI-II), Este sector presenta cualidades paisajísticas.",
-        },
-        {
-            number: "3°",
-            tittle: "Denominación: SG-03",
-            description:
-                "De traza urbana inca, alberga una mayor concentración de evidencia arqueológica prehispánica y de transición junto a inmuebles tipo casa patio con valor patrimonial monumental (PM-I) y patrimonial individual (PI-II) e inmuebles con valor contextual (VC-III),",
-        },
-        {
-            number: "4°",
-            tittle: "Denominación: SG-04",
-            description:
-                "El barrio de San Blas es un sector de pendiente topográfica moderadamente empinada con cualidades paisajísticas alberga elementos arqueológicos en su disposición original y reutilizada e inmuebles tipo casa patio y casa huerto con valor contextual (VC-III) y con algún elemento artístico y/o patrimonial (EP-IV)",
-        },
-        {
-            number: "5°",
-            tittle: "Denominación: SG-05",
-            description:
-                "El barrio de Santa Ana Presenta cualidades paisajísticas, trama urbana heterogénea con pendiente topográfica fuertemente inclinada en el sector de la quebrada de Saphy y moderadamente inclinada en el resto, alberga evidencia arqueológica prehispánica en su disposición original y reutilizada e inmuebles tipo casa patio con valor patrimonial individual (PI-II) y valor contextual (VC-III), así como algunos inmuebles con algún elemento artístico y/o patrimonial (EP-IV) e inmuebles contemporáneos sin valor específico o sin construir (SV-V). El sector presenta riesgos de erosión superficial y erosión por cárcavas en la ladera del río Saphy.",
-        },
-    ],
-};
-
-const leftStepsProps = {
-    contenido: [
-        {
-            number: "6°",
-            tittle: "Denominación: SG-06",
-            description:
-                "Alberga evidencia arqueológica prehispánica original y reutilizada, concentrando un mayor porcentaje de inmuebles tipo casa patio de valor patrimonial individual (PI-II) y con valor contextual (VC-III) y, en menor cantidad, inmuebles sin valor patrimonial específico o sin construir (SV-V) de pendiente topográfica que va desde fuertemente inclinada (8%-15%) a moderadamente empinada (15%-25%) en algunas arterias como avenida Alta y calle Fierro.",
-        },
-        {
-            number: "7°",
-            tittle: "Denominación: SG-07",
-            description:
-                "Alberga evidencia arqueológica reutilizada, presenta mayor densidad habitacional y carácter comercial, la pendiente topográfica varia entre llana, ligeramente inclinada y moderadamente inclinada, tiene una trama urbana heterogénea, alberga edificaciones republicanas y contemporáneas con valor contextual (VC-III) y en mayor cantidad edificaciones catalogadas como inmuebles sin valor específico o sin construir (SV-V).",
-        },
-        {
-            number: "8°",
-            tittle: "Denominación: SG-08",
-            description:
-                "Destacan inmuebles de valor monumental (PM-I) e individual (PI-II) correspondientes a la Plazoleta Santiago, Plazoleta Belén y Plazoleta Almudena alberga evidencia arqueológica reutilizada, inmuebles tipo casa patio con valor contextual (CH- VC) y contemporáneos sin valor patrimonial específico en superficie o sin construir (SV-V), con pendiente topográfica fuertemente inclinada (8-15%) en la calle Almudena y llana en las plazoletas de Belén, Santiago y Almudena.",
-        },
-        {
-            number: "9°",
-            tittle: "Denominación: SG-09",
-            description:
-                "Sector con cualidades paisajísticas, alberga significativa evidencia arqueológica prehispánica en su disposición original y reutilizada, además de terrazas y evidencia del Qhapaq Ñan, así como la iglesia y el convento de La Recoleta y las huaca de Teteqaqa y Mesa Redonda aparte de algunos inmuebles sin valor patrimonial específico (SV-V).",
-        },
-    ],
-};
 ---
 
 <section class="w-full max-w-7xl mx-auto pt-16 px-4">
     <Title {...titleSectionProps} />
     <div class="flex flex-col md:flex-row">
-        <!-- <div class="w-full md:basis-2/4">
-            {rightStepsProps.contenido.map((step) => <RightStep {...step} />)}
-        </div> -->
-
         <div
             class="w-full md:basis-1/1 flex justify-center items-center my-8 md:my-0"
         >
@@ -89,9 +19,5 @@ const leftStepsProps = {
                 alt="Mapa de sectores de gestión del centro histórico"
             />
         </div>
-
-        <!-- <div class="w-full md:basis-2/4">
-            {leftStepsProps.contenido.map((step) => <LeftStep {...step} />)}
-        </div> -->
     </div>
 </section>
