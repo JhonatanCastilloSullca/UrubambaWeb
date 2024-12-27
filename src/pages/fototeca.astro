@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Title from "@components/Title.astro";
 
 const heroProps = {
-    titulo: "Patrimonio Inmaterial del Centro Histórico del Cusco",
+    titulo: "Fototeca",
     img: "urubamba-plaza.webp",
     buttons: [],
 };
@@ -101,7 +101,7 @@ const data = [
     <main class="w-full mx-auto flex flex-col justify-center items-center">
         <Hero {...heroProps} />
 
-        {
+        <!-- {
             data.map((section) => (
                 <>
                     <Title titulo={section.bigsection} />
@@ -164,6 +164,6 @@ const data = [
                     </div>
                 </>
             ))
-        }
+        } -->
     </main>
 </Layout>

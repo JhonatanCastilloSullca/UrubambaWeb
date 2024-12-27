@@ -130,3 +130,6 @@
 .pswp__img{
   object-fit: contain;
 }
+.invert{
+  filter: invert(100);
+}

@@ -1,20 +1,16 @@
 ---
 import Hero from "@components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
-import CatalogacionIndex from "@components/index/CatalogacionIndex.astro";
-import SectoresGestionIndex from "@components/index/SectoresGestionIndex.astro";
 import ComponentesTrabajo from "@components/index/ComponentesTrabajo.astro";
 import GaleriaIndex from "@components/index/GaleriaIndex.astro";
 
 const heroProps = {
-	titulo: "Catalogación de Inmuebles Urbanos",
-	descripcion: `“OPTIMIZACIÓN DEL SISTEMA DE INFORMACIÓN DEL SERVICIO DE CATALOGACIÓN DE INMUEBLES DEL CENTRO HISTÓRICO, DISTRITO, PROVINCIA Y DEPARTAMENTO CUSCO”,<br> donde generamos bases de datos de la catalogación de inmuebles y patrimonio inmaterial del centro histórico.`,
+	titulo: "Catalogación del área monumental de Urubamba",
+	descripcion: `“ESTUDIO Y CATALOGACIÓN DE BIENES PATRIMONIALES Y AMBIENTES URBANOS DEL DISTRITO DE URUBAMBA, PROVINCIA DE URUBAMBA, DEPARTAMENTO DE CUSCO”`,
 	img: "urubamba-plaza.webp",
 	buttons: [
-		{ titulo: "Catalogación", link: "/" },
-		{ titulo: "Patrimonio Inmaterial", link: "/" },
-		{ titulo: "Planimetría", link: "/" },
-		{ titulo: "Hatun Qosqo", link: "/" },
+		{ titulo: "Catalogación", link: "/catalogacion" },
+		{ titulo: "Patrimonio Inmaterial", link: "/inmaterial" },
 	],
 };
 ---
@@ -22,8 +18,8 @@ const heroProps = {
 <Layout title="Catalogación Urubamba">
 	<main class="w-full mx-auto flex flex-col justify-center items-center">
 		<Hero {...heroProps} />
-		<CatalogacionIndex />
-		<SectoresGestionIndex />
+		<!-- <CatalogacionIndex /> -->
+		<!-- <SectoresGestionIndex /> -->
 		<ComponentesTrabajo />
 		<GaleriaIndex />
 	</main>
